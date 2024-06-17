@@ -1,3 +1,0 @@
-#!/bin/bash
-#source "${XDG_CACHE_HOME:-$HOME/.cache}/wal/colors.sh"
-pkill dunst; setsid -f dunst
