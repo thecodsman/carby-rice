@@ -1,0 +1,7 @@
+#!/bin/sh
+
+song="$(mpc listall | dmenu -i -F -l 30 -p "choose song")"
+echo $song
+mpc -f %file% playlist | sed -n '{ /'"$(echo $song | sed)"'/= }' | sort -n -r | mpc del
+
+mpc searchplay filename "$(echo "$song" | grep -m1 "" | xargs -i -d '\n' mpc search filename "{}")" || { mpc insert "$(echo "$song" | grep -m1 "" | xargs --no-run-if-empty -i -d '\n' mpc search filename "{}")" && mpc next; }

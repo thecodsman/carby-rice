@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Check if compfy is running, if yes, kill compfy and start xcompmgr
+pgrep -x "compfy" > /dev/null && pkill compfy && wait $(pgrep "pkill compfy") && xcompmgr && exit
+#
+# Check if xcompmgr is running, if yes, kill xcompmgr and start compfy
+pgrep -x "xcompmgr" > /dev/null && pkill xcompmgr && wait $(pgrep "pkill xcompmgr") && compfy && exit
+
+compfy -b

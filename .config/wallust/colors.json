@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/cody/Downloads/image_proxy.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0A090B",
+        "foreground": "#e7dac9",
+        "cursor": "#e7dac9"
+    },
+    "colors": {
+        "color0": "#0A090B",
+        "color1": "#D36422",
+        "color2": "#A96E4B",
+        "color3": "#789065",
+        "color4": "#E38F2B",
+        "color5": "#BA9258",
+        "color6": "#D79A61",
+        "color7": "#e7dac9",
+        "color8": "#a1988c",
+        "color9": "#D36422",
+        "color10": "#A96E4B",
+        "color11": "#789065",
+        "color12": "#E38F2B",
+        "color13": "#BA9258",
+        "color14": "#D79A61",
+        "color15": "#e7dac9"
+    }
+}

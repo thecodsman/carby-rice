@@ -1,0 +1,71 @@
+#!/bin/sh
+
+color="^B14^^C0^"
+
+case $BLOCK_BUTTON in
+    2) notify-send "Connected Bluetooth Devices:" "$(bluetoothctl devices Connected | sort | grep -oP "(?<=Device .{17} ).*")";;
+    3) notify-send "bluetooth module:" "will show battery of connected devices
+middle click to list connected bluetooth devices"
+esac
+
+devices="$(upower -e | grep -Ev "BAT.|ADP.|DisplayDevice" | sort)"
+[[ -n "$devices" ]] && printf "$color"
+
+for device in $devices; do
+
+    deviceinfo="$(upower -i $device)"
+
+    capacity="$(awk '/percentage:/{print $2}' <<< "$deviceinfo" | grep -o "[[:digit:]]*")"
+    state="$(awk '/state:/{print $2}' <<< "$deviceinfo")"
+
+    if [[ "$state" == "fully-charged" || "$state" == "charging" ]]; then
+        case "$capacity" in
+            "100") icon="󰂅";;
+            "95")  icon="󰂅";;
+            "90")  icon="󰂋";;
+            "85")  icon="󰂊";;
+            "80")  icon="󰂊";;
+            "75")  icon="󰢞";;
+            "70")  icon="󰢞";;
+            "65")  icon="󰂉";;
+            "60")  icon="󰂉";;
+            "55")  icon="󰢝";;
+            "50")  icon="󰢝";;
+            "45")  icon="󰂈";;
+            "40")  icon="󰂈";;
+            "35")  icon="󰂇";;
+            "30")  icon="󰂇";;
+            "25")  icon="󰂆";;
+            "20")  icon="󰂆";;
+            "15")  icon="󰢜";;
+            "10")  icon="󰢜";;
+            "5")   icon="󰢜";;
+            "0")   icon="󰢜";;
+        esac
+    else
+        case "$capacity" in
+            "100") icon="󰁹";;    
+            "95")  icon="󰁹";;
+            "90")  icon="󰂂";;
+            "85")  icon="󰂁";;
+            "80")  icon="󰂁";;
+            "75")  icon="󰂀";;
+            "70")  icon="󰂀";;
+            "65")  icon="󰂀";;
+            "60")  icon="󰁿";;
+            "55")  icon="󰁿";;
+            "50")  icon="󰁾";;
+            "45")  icon="󰁾";;
+            "40")  icon="󰁽";;
+            "35")  icon="󰁽";;
+            "30")  icon="󰁼";;
+            "25")  icon="󰁼";;
+            "20")  icon="󰁻";;
+            "15")  icon="󰁻";;
+            "10")  icon="󰁺";;
+            "5")   icon="󰂃";;    
+            "0")   icon="󰂃";;
+        esac
+    fi
+    printf "%s%d%%" " $icon" "$capacity"
+done

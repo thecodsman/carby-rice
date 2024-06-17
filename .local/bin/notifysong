@@ -1,0 +1,6 @@
+#!/bin/sh
+while true
+do
+    notify-send "$(mpc current)"
+    mpc idle player
+done
