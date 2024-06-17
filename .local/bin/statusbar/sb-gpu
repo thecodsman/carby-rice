@@ -1,0 +1,13 @@
+#!/bin/bash
+# displays the tempature of the gpu
+case $BLOCK_BUTTON in
+	1) notify-send "GPU Hogs" "$(gpustat -c | grep -o "\S*([0-9]*.)")" ;;
+	2) setsid -f "$TERMINAL" -e nvtop ;;
+	3) notify-send "🖥 GPU module " "\- Shows GPU temperature.
+- Left click to show GPU hogs
+- Middle click to open nvtop." ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+
+sensors | awk '/Composite/ {print "[GPU]" $2}'

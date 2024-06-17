@@ -1,0 +1,111 @@
+! Wallust X resources template
+! You can use this template by adding the following to wallust.toml:
+! xres = { src = "Xresources", dst = "~/.config/Xresources" }
+! And to apply it to your X enviroment, you do:
+! xrdb -merge -quiet ~/.config/Xresources
+
+*foreground:        #FFECC0
+*background:        #0E0D18
+*.foreground:       #FFECC0
+*.background:       #0E0D18
+st.font:            monospace-10
+st.alpha:           0.95
+st.alphaOffset:     0.05
+emacs*foreground:   #FFECC0
+emacs*background:   #0E0D18
+URxvt*foreground:   #FFECC0
+XTerm*foreground:   #FFECC0
+UXTerm*foreground:  #FFECC0
+! To determine the opacity you use [], (e.g. '[80]#FFFFFF')
+URxvt*background:   [85]#0E0D18
+XTerm*background:   #0E0D18
+UXTerm*background:  #0E0D18
+URxvt*cursorColor:  #FFECC0
+XTerm*cursorColor:  #FFECC0
+UXTerm*cursorColor: #FFECC0
+URxvt*borderColor:  [85]#0E0D18
+
+! Colors 0-15.
+*.color0: #0E0D18
+*color0:  #0E0D18
+*.color1: #342F5A
+*color1:  #342F5A
+*.color2: #49384C
+*color2:  #49384C
+*.color3: #5B3F42
+*color3:  #5B3F42
+*.color4: #705043
+*color4:  #705043
+*.color5: #906845
+*color5:  #906845
+*.color6: #BF9737
+*color6:  #BF9737
+*.color7: #F6DC9C
+*color7:  #F6DC9C
+*.color8: #AD9A6D
+*color8:  #AD9A6D
+*.color9: #453F78
+*color9:  #453F78
+*.color10: #614A66
+*color10:  #614A66
+*.color11: #795458
+*color11:  #795458
+*.color12: #966B59
+*color12:  #966B59
+*.color13: #C08B5C
+*color13:  #C08B5C
+*.color14: #FFC94A
+*color14:  #FFC94A
+*.color15: #F6DC9C
+*color15:  #F6DC9C
+
+! dwm colors
+dwm.normbordercolor: #0E0D18
+dwm.selbordercolor: #AD9A6D
+dwm.normbgcolor: #0E0D18
+dwm.normfgcolor: #BF9737
+dwm.selfgcolor: #0E0D18
+dwm.selbgcolor: #FFC94A
+dwm.selfloatcolor: #AD9A6D
+dwm.titlenormfgcolor: #FFECC0
+dwm.titlenormbgcolor: #0E0D18
+dwm.titlenormbordercolor: #0E0D18
+dwm.titlenormfloatcolor: #0E0D18
+dwm.titleselfgcolor: #0E0D18
+dwm.titleselbgcolor: #FFC94A
+dwm.titleselbordercolor: #AD9A6D
+dwm.titleselfloatcolor: #FFC94A
+dwm.tagsnormfgcolor: #BF9737
+dwm.tagsnormbgcolor: #0E0D18
+dwm.tagsnormbordercolor: #0E0D18
+dwm.tagsnormfloatcolor: #0E0D18
+dwm.tagsselfgcolor: #0E0D18
+dwm.tagsselbgcolor: #BF9737
+dwm.tagsselbordercolor: #AD9A6D
+dwm.tagsselfloatcolor: #AD9A6D
+dwm.hidnormfgcolor: #BF9737
+dwm.hidnormbgcolor: #0E0D18
+dwm.hidselfgcolor: #0E0D18
+dwm.hidselbgcolor: #BF9737
+dwm.urgfgcolor: #0E0D18
+dwm.urgbgcolor: #FFC94A
+dwm.urgbordercolor: #AD9A6D
+dwm.urgfloatcolor: #AD9A6D
+
+
+! Black color that will not be affected by bold highlighting.
+*.color66: #0E0D18
+*color66:  #0E0D18
+
+! Xclock colors.
+XClock*foreground: #FFECC0
+XClock*background: #0E0D18
+! rgba xres expects a HEXA color like `00/11/22/FF` there the last bit is the alpha in hex.
+XClock*majorColor:  rgba:f6/dc/9c/D9
+XClock*minorColor:  rgba:f6/dc/9c/D9
+XClock*hourColor:   rgba:f6/dc/9c/D9
+XClock*minuteColor: rgba:f6/dc/9c/D9
+XClock*secondColor: rgba:f6/dc/9c/D9
+
+! Set depth to make transparency work.
+URxvt*depth: 32
